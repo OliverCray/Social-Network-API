@@ -43,7 +43,7 @@ const thoughtController = {
         return res.status(404).json({ message: 'No user with that id!' })
       }
 
-      res.json(thought)
+      res.json({ message: 'Thought created' }, thought)
     } catch (err) {
       res.status(500).json(err)
     }
@@ -62,7 +62,7 @@ const thoughtController = {
         return res.status(404).json({ message: 'No thought with that id!' })
       }
 
-      res.json(thought)
+      res.json({ message: 'Thought updated' }, thought)
     } catch (err) {
       res.status(500).json(err)
     }
@@ -108,7 +108,7 @@ const thoughtController = {
         return res.status(404).json({ message: 'No thought with that id!' })
       }
 
-      res.json(thought)
+      res.json({ message: 'Reaction added' }, thought)
     } catch (err) {
       res.status(500).json(err)
     }
@@ -127,7 +127,7 @@ const thoughtController = {
         return res.status(404).json({ message: 'No thought with that id!' })
       }
 
-      res.json(thought)
+      res.json({ message: 'Reaction deleted' }, thought)
     } catch (err) {
       res.status(500).json(err)
     }
