@@ -102,6 +102,19 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)]
 
 const getRandomUsername = () => getRandomArrItem(usernames)
 
+const getRandomFriends = (username, numFriends) => {
+  const friends = []
+
+  for (let i = 0; i < numFriends; i++) {
+    let friendUsername
+    do {
+      friendUsername = getRandomUsername()
+    } while (friendUsername === username || friends.includes(friendUsername))
+    friends.push(friendUsername)
+  }
+  return friends
+}
+
 const getRandomReactions = (int) => {
   const results = []
   for (let i = 0; i < int; i++) {
@@ -125,4 +138,4 @@ const getRandomThoughts = (int) => {
   return results
 }
 
-module.exports = { getRandomUsername, getRandomThoughts }
+module.exports = { getRandomUsername, getRandomThoughts, getRandomFriends }
