@@ -2,7 +2,7 @@ const { User, Thought } = require('../models')
 
 const userController = {
   // get all users
-  async getAllUsers(req, res) {
+  async getUsers(req, res) {
     try {
       const users = await User.find({})
       res.json(users)
