@@ -35,7 +35,7 @@ const userController = {
   async createUser(req, res) {
     try {
       const user = await User.create(req.body)
-      res.json(user)
+      res.json({ message: 'User created', user })
     } catch (err) {
       res.status(500).json(err)
     }
@@ -54,7 +54,7 @@ const userController = {
         return res.status(404).json({ message: 'No user with that id!' })
       }
 
-      res.json(user)
+      res.json({ message: 'User updated', user })
     } catch (err) {
       res.status(500).json(err)
     }
@@ -90,7 +90,7 @@ const userController = {
         return res.status(404).json({ message: 'No user with that id!' })
       }
 
-      res.json({ message: 'Friend added' }, user)
+      res.json({ message: 'Friend added', user })
     } catch (err) {
       res.status(500).json(err)
     }
@@ -109,7 +109,7 @@ const userController = {
         return res.status(404).json({ message: 'No user with that id!' })
       }
 
-      res.json({ message: 'Friend removed' }, user)
+      res.json({ message: 'Friend removed', user })
     } catch (err) {
       res.status(500).json(err)
     }
