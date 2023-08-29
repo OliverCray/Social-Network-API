@@ -140,6 +140,8 @@ const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)]
 
 const getRandomUsername = () => getRandomArrItem(usernames)
 
+// Currently disabled until I figure out how to seed with ids
+/*
 const getRandomFriends = (username, numFriends) => {
   const friends = []
 
@@ -152,6 +154,7 @@ const getRandomFriends = (username, numFriends) => {
   }
   return friends
 }
+*/
 
 const getRandomReactions = (int) => {
   const results = []
