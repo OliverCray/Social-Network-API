@@ -4,7 +4,9 @@ const thoughtController = {
   // get all thoughts
   async getThoughts(req, res) {
     try {
-      const thoughts = await Thought.find({}).sort({ createdAt: -1 })
+      const thoughts = await Thought.find({})
+        .sort({ createdAt: -1 })
+        .select('-__v')
       res.json(thoughts)
     } catch (err) {
       res.status(500).json(err)
