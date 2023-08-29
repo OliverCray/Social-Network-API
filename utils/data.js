@@ -179,4 +179,4 @@ const getRandomThoughts = (int) => {
   return results
 }
 
-module.exports = { getRandomUsername, getRandomThoughts, getRandomFriends }
+module.exports = { getRandomUsername, getRandomThoughts }
